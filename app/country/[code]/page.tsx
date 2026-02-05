@@ -32,7 +32,8 @@ export default async function CountryPage({ params }: PageProps) {
     : "—";
   const currencies = country.currencies
     ? Object.entries(country.currencies)
-      .map(([_, v]) => `${v.name} (${v.symbol})`)
+      .filter(([_, v]) => v !== undefined)
+      .map(([_, v]) => `${v!.name} (${v!.symbol})`)
       .join(", ")
     : "—";
 
