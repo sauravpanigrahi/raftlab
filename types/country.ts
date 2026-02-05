@@ -18,7 +18,7 @@ export interface Country {
   population: number;
   capital?: string[];
   flags: { png: string; svg: string; alt?: string };
-  languages?: Record<string, string>;
+  languages?: Record<string, string | undefined>;
   currencies?: Record<string, { name: string; symbol: string }>;
   capitalInfo?: { latlng?: [number, number] };
   latlng?: [number, number];
